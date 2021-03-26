@@ -67,13 +67,12 @@ and how to successfully get involved.
 [![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)"""
 
 palabras = texto.split(" ")
-strmayor = ""
 cantmax = 0
 for p in palabras:
     cant = 0
     for pal in palabras:
         if(p == pal):
-            cant = cant +  1
+            cant += 1
     if(cant > cantmax):
         strmayor = p
         cantmax = cant
