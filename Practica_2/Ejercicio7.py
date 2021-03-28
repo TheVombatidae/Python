@@ -1,3 +1,11 @@
+#Trabajando con los contenidos de los archvios que pueden acceder en el curso:
+#• nombres
+#• eval1
+#• eval2
+#Copiar el contenido de los archvios en variables de tipo string y realizar.
+#• generar una estructura con los nombres de los estudiantes y la suma de ambas.
+#• Calcular el promedio de las notas totales e informar quiénes obtuvieron menos que el promedio.
+
 nombres = """'Agustin',
  'Alan',
  'Andrés',
@@ -44,8 +52,7 @@ nombres = """'Agustin',
  'TOMAS',
  'Tomás',
  'Ulises',
- 'Yanina'
- """
+ 'Yanina'"""
 eva1 = """81,
  60,
  72,
@@ -141,19 +148,21 @@ eva2 = """30,
  57,
  10"""
 
-notas1 = eva1.split(",\n")
-notas2 = eva2.split(",\n")
+#listas.
+l_nombres = nombres.replace("'",'').split(',\n')
+l_notas1 = eva1.split(',\n') 
+l_notas2 = eva2.split(',\n')
 
-listanotas1 = []
-listanotas2 = []
-listatotal = []
+#creo diccionario.
+datos_alumnos = {}
+for i in range(len(l_nombres)):
+    nota = int(l_notas1[i]) + int(l_notas2[i])
+    nom = l_nombres[i].upper()
+    datos_alumnos[nom] = nota
 
-for n in notas1:
-    listanotas1.append(int(n))
-for n in notas2:
-    listanotas2.append(int(n))
-
-for i in range(len(listanotas1)):
-    suma = 0
-    suma = listanotas1[i] + listanotas2[i]
-    listatotal.append(suma)
+#calcular promedio e informar alumnos por debajo del mismo.
+prom = sum(datos_alumnos.values()) / len(datos_alumnos)
+print(f"El promedio general es: {prom}")
+for elem in datos_alumnos:
+    if datos_alumnos[elem] < prom:
+        print("El alumno", elem ," con nota =",datos_alumnos[elem],"esta por debajo del promedio")
