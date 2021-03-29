@@ -23,7 +23,7 @@ tabla = {
 #lista con las claves del diccionario
 #claves = list(tabla.keys())
 
-palabra = input("Ingres palabra: ").upper()
+palabra = input("Ingrese palabra: ").upper()
 p = [c for c in palabra if palabra.isalpha()]
 pts = 0
 
