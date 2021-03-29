@@ -166,3 +166,4 @@ print(f"El promedio general es: {prom}")
 for elem in datos_alumnos:
     if datos_alumnos[elem] < prom:
         print("El alumno", elem ," con nota =",datos_alumnos[elem],"esta por debajo del promedio")
+
