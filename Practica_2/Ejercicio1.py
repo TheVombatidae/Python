@@ -3,7 +3,7 @@
 
 #Para colocar un texto en una variable usamos tres comillas simples o dobles
 
-texto = """# <img alt="NumPy" src="/branding/logo/primary/numpylogo.svg" height="60">
+texto = """# <imj alt="NumPy" src="/branding/logo/primary/numpylogo.svg" height="60">
 
 NumPy is the fundamental package needed for scientific computing with Python.
 
