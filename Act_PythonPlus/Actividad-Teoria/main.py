@@ -8,7 +8,6 @@ with open(f'ejemplos/clase6/{juego}.jpg', 'wb') as f:
     f.write(icono.content)"""
 
 import csv
-from collections import Counter
 import operator
 
 #-------------------PUNTO 1-----------------------------
