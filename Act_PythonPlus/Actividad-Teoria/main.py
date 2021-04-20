@@ -33,8 +33,10 @@ def diez_mejores():
         reader.__next__() #Ignorar encabezado
         dic = {}
         for line in reader:
-            if line[6] != '':
+            try:
                 dic[line[4]] = int(line[6]) #4 = url / 6 = valoracion
+            except ValueError:
+                continue
 
     dic = sorted(dic.items(), key=operator.itemgetter(1)) #ordeno por clave
     # cont = 0
