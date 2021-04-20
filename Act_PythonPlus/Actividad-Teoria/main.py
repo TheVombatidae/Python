@@ -38,14 +38,14 @@ def diez_mejores():
                 dic[line[4]] = int(line[6]) #4 = url / 6 = valoracion
 
     dic = sorted(dic.items(), key=operator.itemgetter(1)) #ordeno por clave
-    cont = 0
-    for i in reversed(range(len(dic))):
-        if cont == 10:
-            break
-        diez_mej.append(dic[i])
-        cont +=1
-
-    #diez_mej = [dic[i] for i in reversed(range(len(dic)))]
+    # cont = 0
+    # for i in reversed(range(len(dic))):
+    #     if cont == 10:
+    #         break
+    #     diez_mej.append(dic[i])
+    #     cont +=1
+ 
+    diez_mej = [dic[i] for i in reversed(range(len(dic))) if i >= len(dic)-10] # diez mejores list comprehension
     return diez_mej
 
 print('----------------------------PUNTO 1------------------------------------')
