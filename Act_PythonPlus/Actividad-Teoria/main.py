@@ -27,7 +27,6 @@ def listar_esp():
 #-----------------------PUNTO 2-------------------------
 
 def diez_mejores():
-    diez_mej = []
     with open('appstore_games.csv','r',encoding='UTF-8') as archivo:
         reader = csv.reader(archivo,delimiter=',')
         reader.__next__() #Ignorar encabezado
@@ -49,12 +48,19 @@ def diez_mejores():
     diez_mej = [dic[i] for i in reversed(range(len(dic))) if i >= len(dic)-10] # diez mejores list comprehension
     return diez_mej
 
+def imprimir_lista(lista):
+    for i in range(len(lista)):
+        print(f'{i+1} - {lista[i]}')
+        print('- '*20)
+
 print('----------------------------PUNTO 1------------------------------------')
-print(listar_esp())
+lista_spanish = listar_esp()
+imprimir_lista(lista_spanish)
 print('-----------------------------------------------------------------------')
 
 print('----------------------------PUNTO 2------------------------------------')
-print(diez_mejores())
+top_ten = diez_mejores()
+imprimir_lista(top_ten)
 print('-----------------------------------------------------------------------')
 
 
